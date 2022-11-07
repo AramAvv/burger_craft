@@ -1,0 +1,21 @@
+[{
+  "name": "brioche bun",
+  "price": 8,
+  "grams": 60
+},
+  {
+  "name": "beef patty",
+  "price": 35,
+  "grams": 150
+},
+  {
+    "name": "breaded chicken fillet",
+    "price": 25,
+    "grams": 100
+  },
+  {
+    "name": "grilled chicken fillet",
+    "price": 25,
+    "grams": 100
+  }
+]

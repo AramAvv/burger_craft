@@ -1,0 +1,63 @@
+body{
+    background-color: #2B2A2A;
+    color: white;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    padding: 50px 400px;
+}
+.right_side{
+
+}
+
+/*burger--item*/
+
+/*dropdown*/
+select {
+    background: #2B2A2A;
+    border: 3px solid rgb(84, 73, 116);
+    width: 300px;
+    font-size: large;
+    color: white;
+   height: 40px;
+    cursor: pointer;
+}
+select>option{
+    font-size:180%;
+   zoom: 60%;
+
+}
+.left_side{
+    width: 58%;
+    padding: 50px;
+}
+.check{
+    margin-top: 20px;
+    border-top: 1px solid yellow;
+    width: 100%;
+}
+.check_text{
+    padding: 15px;
+}
+
+/*Burger image*/
+.burger_image{
+    position: relative;
+}
+img:before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    margin: auto;
+    width: 60px;
+    height: 30px;
+    background: url(../img/arrow-left.svg) no-repeat center;
+}
+img{
+ width: 40%;
+}
