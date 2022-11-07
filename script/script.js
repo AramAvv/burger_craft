@@ -15,29 +15,32 @@ add_item.addEventListener("click", () => {
     "BREADED CHICKEN FILLET(25 lei)",
     "GRILLED CHICKEN FILLET(25 lei)",
   ];
-  const meat_image = document.querySelector(".burger_meat_image");
+  const burger_items = document.querySelector(".burger_meat");
   const newMeat_image = document.createElement("img");
+  const div = document.createElement("div");
   newMeat_image.src = "img/pirjoala-de-vita.svg";
-  meat_image.append(newMeat_image);
   for (let i = 0; i < items.length; i++) {
+    const burger_img_detailes = document.querySelectorAll(".burger_image");
+    div.append(newMeat_image);
+    burger_items.append(div);
+    div.classList.add("burger_image");
     let item = items[i];
     const newOption = document.createElement("option");
     newOption.setAttribute("value", item);
     const textNode = document.createTextNode(item);
     newOption.appendChild(textNode);
     select.append(newOption);
+    add_arrow(burger_img_detailes);
   }
 });
 
-// const burger_img_detailes = document.querySelectorAll('.burger_image')
-// const add_arrow = (arr) => {
-//   arr.forEach((item, index) =>{
-//     console.log(item)
-//     if(index % 2 === 0){
-//       item.classList.toggle('burger_image_before')
-//     }else {
-//       item.classList.toggle('burger_image_after')
-//     }
-//   })
-// }
-// add_arrow(burger_img_detailes)
+const add_arrow = (arr) => {
+  arr.forEach((item, index) => {
+    console.log(item);
+    if (index % 2 === 0) {
+      item.classList.add("burger_image_before");
+    } else {
+      item.classList.add("burger_image_after");
+    }
+  });
+};
