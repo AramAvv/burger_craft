@@ -28,3 +28,16 @@ add_item.addEventListener("click", () => {
     select.append(newOption);
   }
 });
+
+// const burger_img_detailes = document.querySelectorAll('.burger_image')
+// const add_arrow = (arr) => {
+//   arr.forEach((item, index) =>{
+//     console.log(item)
+//     if(index % 2 === 0){
+//       item.classList.toggle('burger_image_before')
+//     }else {
+//       item.classList.toggle('burger_image_after')
+//     }
+//   })
+// }
+// add_arrow(burger_img_detailes)
