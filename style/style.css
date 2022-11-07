@@ -9,15 +9,44 @@ body {
 }
 /*/dropdown/*/
 select {
-  background: #2b2a2a;
-  border: 3px solid rgb(84, 73, 116);
-  width: 300px;
+  background: #2B2A2A;
+  border: 3px solid #f8bb46;
+  width: 350px;
   font-size: large;
   color: white;
-  height: 40px;
+  height: 50px;
   cursor: pointer;
+  padding: 10px;
+}
+/title/
+.title{
+  display: block;
+  border-radius: 0;
+  white-space: normal;
+  color: #f8bb46;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
 }
 
+/Add-item/
+button{
+  height: 20px;
+  width: 150px;
+}
+.btn_add_plus{
+  border: 1px solid #f8bb46;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+.btn_add{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
 /*/left side/*/
 .left_side {
   width: 600px;
@@ -49,8 +78,7 @@ select {
 
 img {
   width: 250px;
-  vertical-align: middle;
-  outline: 0;
+
 }
 .image_description {
   position: absolute;
@@ -64,7 +92,7 @@ img {
   top: 35px;
   text-align: right;
 }
-.burger_image:before {
+.burger_image_before:before {
   content: "";
   position: absolute;
   top: 39px;
@@ -75,6 +103,18 @@ img {
   background-repeat: no-repeat;
   background-size: 61px;
 }
+.burger_image_after:after{
+  content: "";
+  position: absolute;
+  top: 19px;
+  right: -95px;
+  height: 70px;
+  width: 200px;
+  background-image: url(../img/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-size: 61px;
+}
+
 .burger_item_meat {
   display: flex;
   flex-direction: column;
