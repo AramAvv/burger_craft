@@ -6,34 +6,26 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    align-content: center;
-
-    padding: 50px 400px;
+    padding: 50px;
 }
-.right_side{
-
-}
-
-/*burger--item*/
-
-/*dropdown*/
+/*/dropdown/*/
 select {
     background: #2B2A2A;
     border: 3px solid rgb(84, 73, 116);
     width: 300px;
     font-size: large;
     color: white;
-   height: 40px;
+    height: 40px;
     cursor: pointer;
 }
-select>option{
-    font-size:180%;
-   zoom: 60%;
 
-}
+
+
+
+/*/left side/*/
 .left_side{
-    width: 58%;
-    padding: 50px;
+    width: 600px;
+    padding: 70px;
 }
 .check{
     margin-top: 20px;
@@ -44,20 +36,41 @@ select>option{
     padding: 15px;
 }
 
-/*Burger image*/
+
+/*/right side/*/
+/*/Burger image/*/
 .burger_image{
     position: relative;
+    padding: 0 235px;
+    justify-content: center;
+    margin-bottom: 10px;
 }
-img:before{
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 170px;
-    margin: auto;
-    width: 60px;
-    height: 30px;
-    background: url(../img/arrow-left.svg) no-repeat center;
-}
+
 img{
- width: 40%;
+    width: 250px;
+    vertical-align: middle;
+    outline: 0;
+}
+.image_description{
+    position: absolute;
+    font-family: 'Pattaya', sans-serif;
+    color: #f8bb46;
+    font-size: 36px;
+    width: 150px;
+    text-transform: lowercase;
+
+    left: 0;
+    top: 35px;
+    text-align: right;
+}
+.burger_image:before {
+    content: "";
+    position: absolute;
+    top: 39px;
+    left: 170px;
+    height: 70px;
+    width: 200px;
+    background-image: url(../img/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-size: 61px;
 }
