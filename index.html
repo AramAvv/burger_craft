@@ -1,145 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Burger Craft</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<div class="container">
-    <div class="right_side">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="right_side">
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">1.BUN</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="bun" id="bun">
-                    <option value="brioche_bun">BRIOCHE BUN(8 lei)</option>
-                </select>
-            </div>
+          <div class="burger_title">
+            <h3 class="title">1.BUN</h3>
+          </div>
+          <div class="burger_item_dropdown">
+            <select name="bun" id="bun">
+              <option value="brioche_bun">BRIOCHE BUN(8 lei)</option>
+            </select>
+          </div>
+        </div>
+        <div class="burger_item meat">
+          <div class="burger_title">
+            <h3 class="title">2.MEAT</h3>
+          </div>
+          <div class="burger_item_meat">
+            <select name="meat" id="meat">
+              <option value="beef_meet">BEEF MEET(35 lei)</option>
+              <option value="breaded_fillet">
+                BREADED CHICKEN FILLET(25 lei)
+              </option>
+              <option value="grilled_fillet">
+                GRILLED CHICKEN FILLET(25 lei)
+              </option>
+            </select>
+          </div>
+          <div class="add_item"><button>ADD ITEM</button></div>
         </div>
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">2.MEAT</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="meat" id="meat">
-                    <option value="beef_meet">BEEF MEET(35 lei)</option>
-                    <option value="breaded_fillet">BREADED CHICKEN FILLET(25 lei)</option>
-                    <option value="grilled_fillet">GRILLED CHICKEN FILLET(25 lei)</option>
-                </select>
-            </div>
-            <div class="add_item"><button>ADD ITEM</button></div>
+          <div class="burger_title">
+            <h3 class="title">3.BOTTOM SAUCE</h3>
+          </div>
+          <div class="burger_item_dropdown">
+            <select name="bottom_sauce" id="bottom_sauce">
+              <option value="none">-</option>
+              <option value="ketchup">KETCHUP(4 lei)</option>
+              <option value="tartar_sauce">TARTAR SAUCE(4 lei)</option>
+              <option value="mayonaise">MAYONNAISE(4 lei)</option>
+              <option value="garlic&bbq">GARLIC&BBQ(4 lei)</option>
+              <option value="spiracha">SPIRACHA(spicy)(6 lei)</option>
+              <option value="classy_sauce">CLASSY SAUCE(4 lei)</option>
+              <option value="garlic_sauce">GARLIC SAUCE(4 lei)</option>
+            </select>
+          </div>
+          <div class="add_sauces"><button>ADD ITEM</button></div>
         </div>
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">3.BOTTOM SAUCE</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="bottom_sauce" id="bottom_sauce">
-                    <option value="none">-</option>
-                    <option value="ketchup">KETCHUP(4 lei)</option>
-                    <option value="tartar_sauce">TARTAR SAUCE(4 lei)</option>
-                    <option value="mayonaise">MAYONNAISE(4 lei)</option>
-                    <option value="garlic&bbq">GARLIC&BBQ(4 lei)</option>
-                    <option value="spiracha">SPIRACHA(spicy)(6 lei)</option>
-                    <option value="classy_sauce">CLASSY SAUCE(4 lei)</option>
-                    <option value="garlic_sauce">GARLIC SAUCE(4 lei)</option>
-                </select>
-            </div>
-            <div class="add_item"><button>ADD ITEM</button></div>
+          <div class="burger_title">
+            <h3 class="title">4.TOP SAUCE</h3>
+          </div>
+          <div class="burger_item_dropdown">
+            <select name="top_sauce" id="top_sauce">
+              <option value="none">-</option>
+              <option value="garlic_sauce">GARLIC SAUCE(4 lei)</option>
+              <option value="tartar_sauce">TARTAR SAUCE(4 lei)</option>
+              <option value="ketchup">KETCHUP(4 lei)</option>
+              <option value="mayonnaise">MAYONNAISE(4 lei)</option>
+              <option value="garlic&bbq">GARLIC&BBQ(4 lei)</option>
+              <option value="spiracha">SPIRACHA(spicy)(6 lei)</option>
+              <option value="classy_sauce">CLASSY SAUCE(4 lei)</option>
+            </select>
+          </div>
+          <div class="add_item"><button>ADD ITEM</button></div>
         </div>
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">4.TOP SAUCE</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="top_sauce" id="top_sauce">
-                    <option value="none">-</option>
-                    <option value="garlic_sauce">GARLIC SAUCE(4 lei)</option>
-                    <option value="tartar_sauce">TARTAR SAUCE(4 lei)</option>
-                    <option value="ketchup">KETCHUP(4 lei)</option>
-                    <option value="mayonnaise">MAYONNAISE(4 lei)</option>
-                    <option value="garlic&bbq">GARLIC&BBQ(4 lei)</option>
-                    <option value="spiracha">SPIRACHA(spicy)(6 lei)</option>
-                    <option value="classy_sauce">CLASSY SAUCE(4 lei)</option>
-                </select>
-            </div>
-            <div class="add_item"><button>ADD ITEM</button></div>
+          <div class="burger_title">
+            <h3 class="title">5.CHEESE</h3>
+          </div>
+          <div class="burger_item_dropdown">
+            <select name="cheese" id="cheese">
+              <option value="none">-</option>
+              <option value="cheddar_cheese">"CHEDDAR" CHEESE(12 lei)</option>
+              <option value="dorblu_cheese">DURBLU CHEESE(15 lei)</option>
+            </select>
+          </div>
+          <div class="add_item"><button>ADD ITEM</button></div>
         </div>
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">5.CHEESE</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="cheese" id="cheese">
-                    <option value="none">-</option>
-                    <option value="cheddar_cheese">"CHEDDAR" CHEESE(12 lei)</option>
-                    <option value="dorblu_cheese">DURBLU CHEESE(15 lei)</option>
-                </select>
-            </div>
-            <div class="add_item"><button>ADD ITEM</button></div>
+          <div class="burger_title">
+            <h3 class="title">6.TOPPINGS</h3>
+          </div>
+          <div class="burger_item_dropdown">
+            <select name="toppings" id="toppings">
+              <option value="none">-</option>
+              <option value="crispy_bacon">CRISPY BACON(12 lei)</option>
+              <option value="fried_egg">FRIED EGGS(10 lei)</option>
+              <option value="marinated_onion">MARINATED ONION(2 lei)</option>
+              <option value="caramel_onion">CARAMEL ONION(10 lei)</option>
+              <option value="pickles">PICKLES(4 lei)</option>
+              <option value="cucumber">CUCUMBER(4 lei)</option>
+              <option value="tomato">TOMATO(5 lei)</option>
+              <option value="iceberg_lettuce">ICEBERG LETTUCE(5 lei)</option>
+            </select>
+          </div>
+          <div class="add_item"><button>ADD ITEM</button></div>
         </div>
         <div class="burger_item">
-            <div class="burger_title">
-                <h3 class="title">6.TOPPINGS</h3>
-            </div>
-            <div class="burger_item_dropdown">
-                <select name="toppings" id="toppings">
-                    <option value="none">-</option>
-                    <option value="crispy_bacon">CRISPY BACON(12 lei)</option>
-                    <option value="fried_egg">FRIED EGGS(10 lei)</option>
-                    <option value="marinated_onion">MARINATED ONION(2 lei)</option>
-                    <option value="caramel_onion">CARAMEL ONION(10 lei)</option>
-                    <option value="pickles">PICKLES(4 lei)</option>
-                    <option value="cucumber">CUCUMBER(4 lei)</option>
-                    <option value="tomato">TOMATO(5 lei)</option>
-                    <option value="iceberg_lettuce">ICEBERG LETTUCE(5 lei)</option>
-                </select>
-            </div>
-            <div class="add_item"><button>ADD ITEM</button></div>
-        </div>
-        <div class="burger_item">
-            <input type="text" placeholder="Name your burger 🍔">
+          <input type="text" placeholder="Name your burger 🍔" />
         </div>
         <div class="check">
-            <div class="check_text">
-
-            </div>
-            <div class="buttons">
-                <button>ADD TO CARD</button>
-                <button>START FROM SCRATCH</button>
-            </div>
+          <div class="check_text"></div>
+          <div class="buttons">
+            <button>ADD TO CARD</button>
+            <button>START FROM SCRATCH</button>
+          </div>
         </div>
-
-    </div>
-    <div class="left_side">
+      </div>
+      <div class="left_side">
         <div class="burger_images">
-            <div class="burger_image">
-                <span class="image_description">BRIOCHE BUN</span>
-                <img src="img/asset-1.svg" alt="">
-            </div>
-            <div class="burger_image">
-                <img src="img/pirjoala-de-vita.svg" alt="">
-            </div>
-            <div class="burger_image">
-                <span class="image_description">BRIOCHE BUN</span>
-                <img src="img/bun-bottom.svg" alt="">
-            </div>
+          <div class="burger_image">
+            <span class="image_description">BRIOCHE BUN</span>
+            <img src="img/asset-1.svg" alt="" />
+          </div>
+          <div class="burger_meat_image">
+            <img src="img/pirjoala-de-vita.svg" alt="" />
+          </div>
+          <div class="burger_image">
+            <span class="image_description">BRIOCHE BUN</span>
+            <img src="img/bun-bottom.svg" alt="" />
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-
-
-<script src="script/script.js"></script>
-</body>
+    <script src="script/script.js"></script>
+  </body>
 </html>
