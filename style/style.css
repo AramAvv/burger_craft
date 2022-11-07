@@ -1,76 +1,81 @@
-body{
-    background-color: #2B2A2A;
-    color: white;
-
+body {
+  background-color: #2b2a2a;
+  color: white;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    padding: 50px;
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
 }
 /*/dropdown/*/
 select {
-    background: #2B2A2A;
-    border: 3px solid rgb(84, 73, 116);
-    width: 300px;
-    font-size: large;
-    color: white;
-    height: 40px;
-    cursor: pointer;
+  background: #2b2a2a;
+  border: 3px solid rgb(84, 73, 116);
+  width: 300px;
+  font-size: large;
+  color: white;
+  height: 40px;
+  cursor: pointer;
 }
-
-
-
 
 /*/left side/*/
-.left_side{
-    width: 600px;
-    padding: 70px;
+.left_side {
+  width: 600px;
+  padding: 70px;
 }
-.check{
-    margin-top: 20px;
-    border-top: 1px solid yellow;
-    width: 100%;
+.check {
+  margin-top: 20px;
+  border-top: 1px solid yellow;
+  width: 100%;
 }
-.check_text{
-    padding: 15px;
+.check_text {
+  padding: 15px;
 }
-
 
 /*/right side/*/
 /*/Burger image/*/
-.burger_image{
-    position: relative;
-    padding: 0 235px;
-    justify-content: center;
-    margin-bottom: 10px;
+.burger_image {
+  position: relative;
+  padding: 0 235px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.burger_meat_image {
+  position: relative;
+  padding: 0 235px;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-img{
-    width: 250px;
-    vertical-align: middle;
-    outline: 0;
+img {
+  width: 250px;
+  vertical-align: middle;
+  outline: 0;
 }
-.image_description{
-    position: absolute;
-    font-family: 'Pattaya', sans-serif;
-    color: #f8bb46;
-    font-size: 36px;
-    width: 150px;
-    text-transform: lowercase;
+.image_description {
+  position: absolute;
+  font-family: "Pattaya", sans-serif;
+  color: #f8bb46;
+  font-size: 36px;
+  width: 150px;
+  text-transform: lowercase;
 
-    left: 0;
-    top: 35px;
-    text-align: right;
+  left: 0;
+  top: 35px;
+  text-align: right;
 }
 .burger_image:before {
-    content: "";
-    position: absolute;
-    top: 39px;
-    left: 170px;
-    height: 70px;
-    width: 200px;
-    background-image: url(../img/arrow-left.svg);
-    background-repeat: no-repeat;
-    background-size: 61px;
+  content: "";
+  position: absolute;
+  top: 39px;
+  left: 170px;
+  height: 70px;
+  width: 200px;
+  background-image: url(../img/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-size: 61px;
+}
+.burger_item_meat {
+  display: flex;
+  flex-direction: column;
 }
