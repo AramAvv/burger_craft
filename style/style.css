@@ -17,6 +17,7 @@ select {
   height: 50px;
   cursor: pointer;
   padding: 10px;
+  margin-bottom: 10px;
 }
 /title/
 .title{
@@ -46,6 +47,9 @@ button{
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+.btn_delete{
+  position: absolute;
 }
 /*/left side/*/
 .left_side {
@@ -80,7 +84,7 @@ img {
   width: 250px;
 
 }
-.image_description {
+.image_description_left {
   position: absolute;
   font-family: "Pattaya", sans-serif;
   color: #f8bb46;
