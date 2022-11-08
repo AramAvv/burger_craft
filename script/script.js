@@ -6,6 +6,7 @@ const fetch1 = () => {
       console.log(meat);
       const select = document.createElement("select");
 
+
       meat.forEach((element) => {
         const option = document.createElement("option");
         option.textContent = `${element.name.toUpperCase()} (${
@@ -21,12 +22,14 @@ const fetch1 = () => {
       });
     });
 };
+
 let images = document.querySelectorAll(".burger_image");
 const add_meat_btn = document.querySelector(".btn_meat");
 const meat_div = document.querySelector(".burger_item_meat");
 const select_meat = document.querySelectorAll(".burger_item_meat option");
 const meat_box = document.querySelector(".meat_box");
 let select_meat_arr = document.querySelectorAll(".burger_item_meat select");
+
 
 window.addEventListener("load", () => {
   add_arrow(images);
@@ -38,6 +41,7 @@ add_meat_btn.addEventListener("click", () => {
   meat_div.append(select);
   select.setAttribute("class", "meat_select");
   select_meat.forEach((item) => {
+
     const option = document.createElement("option");
     option.setAttribute("value", item.getAttribute("value"));
     option.textContent = item.textContent;
@@ -55,6 +59,7 @@ add_meat_btn.addEventListener("click", () => {
     }
   }
   select_meat_arr = document.querySelectorAll(".burger_item_meat select");
+
 });
 
 const add_img = (box, img_adress) => {
@@ -77,6 +82,7 @@ const add_arrow = (arr) => {
       item.classList.remove("burger_image_before");
     }
   });
+
 };
 const select_info = document.querySelectorAll("#meat");
 const burger_info = document.querySelector(".check_text");
@@ -85,3 +91,4 @@ select_info.forEach((element) => {
     burger_info.textContent = e.target.textContent;
   });
 });
+
