@@ -10,7 +10,7 @@ body {
 /*/dropdown/*/
 
 select {
-  background: #2B2A2A;
+  background: #2b2a2a;
   border: 3px solid #f8bb46;
   width: 350px;
   font-size: large;
@@ -20,8 +20,7 @@ select {
   padding: 10px;
   margin-bottom: 10px;
 }
-/title/
-.title{
+.title {
   display: block;
   border-radius: 0;
   white-space: normal;
@@ -32,14 +31,13 @@ select {
   text-align: left;
 }
 
-/Add-item/
-button{
+button {
   height: 20px;
   width: 150px;
   background-color: red;
 
 }
-.btn_add_plus{
+.btn_add_plus {
   border: 1px solid #f8bb46;
   text-align: center;
   border-radius: 50%;
@@ -48,7 +46,7 @@ button{
   height: 18px;
   background-color: transparent;
 }
-.btn_add{
+.btn_add {
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -86,7 +84,6 @@ button{
 
 img {
   width: 250px;
-
 }
 .image_description {
   position: absolute;
@@ -111,7 +108,7 @@ img {
   background-repeat: no-repeat;
   background-size: 61px;
 }
-.burger_image_after:after{
+.burger_image_after:after {
   content: "";
   position: absolute;
   top: 19px;
