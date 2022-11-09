@@ -12,39 +12,48 @@
       "id": 2,
       "name": "beef patty",
       "price": 35,
-      "grams": 150
+      "grams": 150,
+      "url": "../img/pirjoala-de-vita.svg"
     },
     {
       "id": 3,
       "name": "breaded chicken fillet",
       "price": 25,
-      "grams": 100
+      "grams": 100,
+      "url": "../img/pirjoala-de-pui.svg"
     },
     {
       "id": 4,
       "name": "grilled chicken fillet",
       "price": 25,
-      "grams": 100
+      "grams": 100,
+      "url": "../img/pirjoala-de-pui-grilled.svg"
     }
   ],
-  "sauce": [
+  "bottom sauce": [
+    {
+      "name": "-"
+    },
     {
       "id": 5,
       "name": "ketchup",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-5.svg"
     },
     {
       "id": 6,
       "name": "tartar sauce",
       "price": 4,
-      "grams": 30
+      "grams": 30,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 7,
       "name": "mayonnaise",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 8,
@@ -56,36 +65,100 @@
       "id": 9,
       "name": "sriracha(spicy)",
       "price": 6,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-sriracha.svg"
     },
     {
       "id": 10,
       "name": "classy sauce",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 11,
       "name": "garlic sauce",
       "price": 4,
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
+    }
+  ],
+  "top sauce": [
+    {
+      "name": "-"
+    },
+    {
+      "id": 5,
+      "name": "ketchup",
+      "price": 4,
+      "grams": 20,
+      "url": "../img/asset-5.svg"
+    },
+    {
+      "id": 6,
+      "name": "tartar sauce",
+      "price": 4,
+      "grams": 30,
+      "url": "../img/asset-tartar.svg"
+    },
+    {
+      "id": 7,
+      "name": "mayonnaise",
+      "price": 4,
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
+    },
+    {
+      "id": 8,
+      "name": "garlic&bbq",
+      "price": 4,
       "grams": 20
+    },
+    {
+      "id": 9,
+      "name": "sriracha(spicy)",
+      "price": 6,
+      "grams": 20,
+      "url": "../img/asset-sriracha.svg"
+    },
+    {
+      "id": 10,
+      "name": "classy sauce",
+      "price": 4,
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
+    },
+    {
+      "id": 11,
+      "name": "garlic sauce",
+      "price": 4,
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     }
   ],
   "cheese": [
     {
+      "name": "-"
+    },
+    {
       "id": 12,
       "name": "cheddar cheese",
       "price": 12,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-cheddar.svg"
     },
     {
       "id": 13,
       "name": "dorblu cheese",
       "price": 15,
-      "grams": 25
+      "grams": 25,
+      "url": "../img/asset-dorblu.svg"
     }
   ],
   "toppings": [
+    {
+      "name": "-"
+    },
     {
       "id": 14,
       "name": "cripsy bacon",
