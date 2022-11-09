@@ -10,6 +10,7 @@ body {
 /*/dropdown/*/
 
 select {
+  display: block;
   background: #2b2a2a;
   border: 3px solid #f8bb46;
   width: 350px;
@@ -20,6 +21,21 @@ select {
   padding: 10px;
   margin-bottom: 10px;
 
+}
+.divParent{
+  position: relative;
+  display: block;
+}
+.deleteSelect{
+  position: absolute;
+  top: 13px;
+  right: -28px;
+  height: 20px;
+  width: 20px;
+  background-image: url(../img/delete-option.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .burger_item_name {
@@ -43,8 +59,11 @@ select {
   text-transform: uppercase;
   text-align: left;
 }
-
+.add_item{
+  cursor: pointer;
+}
 button {
+  cursor: pointer;
   height: 20px;
   width: 150px;
   background-color: red;
@@ -54,7 +73,6 @@ button {
   color: #f8bb46;
   border: 1px solid #2b2a2a;
   text-align: center;
-  cursor: pointer;
   width: 80px;
   height: 25px;
   background-color: transparent;
@@ -137,7 +155,7 @@ button {
 img {
   width: 250px;
 }
-.image_description {
+.left_description {
   position: absolute;
   font-family: "Pattaya", sans-serif;
   color: #f8bb46;
@@ -147,6 +165,18 @@ img {
 
   left: 0;
   top: 35px;
+  text-align: right;
+}
+.right_description {
+  position: absolute;
+  font-family: "Pattaya", sans-serif;
+  color: #f8bb46;
+  font-size: 36px;
+  width: 150px;
+  text-transform: lowercase;
+
+  right: -110px;
+  top: 0;
   text-align: right;
 }
 .burger_image_before:before {
