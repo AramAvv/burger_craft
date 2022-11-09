@@ -89,6 +89,20 @@ button {
 
   background-color: transparent;
 }
+.btn_add_plus:hover{
+  animation: animate 0.3s linear;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(90deg);
+  }
+
+}
+
 .btn_add {
   margin-top: 10px;
   display: flex;
