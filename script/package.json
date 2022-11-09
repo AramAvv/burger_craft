@@ -12,22 +12,76 @@
       "id": 2,
       "name": "beef patty",
       "price": 35,
-      "grams": 150
+      "grams": 150,
+      "url": "../img/pirjoala-de-vita.svg"
     },
     {
       "id": 3,
       "name": "breaded chicken fillet",
       "price": 25,
-      "grams": 100
+      "grams": 100,
+      "url": "../img/pirjoala-de-pui.svg"
     },
     {
       "id": 4,
       "name": "grilled chicken fillet",
       "price": 25,
-      "grams": 100
+      "grams": 100,
+      "url": "../img/pirjoala-de-pui-grilled.svg"
     }
   ],
-  "sauce": [
+  "bottom sauce": [
+    {
+      "name": "-"
+    },
+    {
+      "id": 5,
+      "name": "ketchup",
+      "price": 4,
+      "grams": 20,
+      "url": "../img/pirjoala-de-pui-grilled.svg"
+    },
+    {
+      "id": 6,
+      "name": "tartar sauce",
+      "price": 4,
+      "grams": 30
+    },
+    {
+      "id": 7,
+      "name": "mayonnaise",
+      "price": 4,
+      "grams": 20
+    },
+    {
+      "id": 8,
+      "name": "garlic&bbq",
+      "price": 4,
+      "grams": 20
+    },
+    {
+      "id": 9,
+      "name": "sriracha(spicy)",
+      "price": 6,
+      "grams": 20
+    },
+    {
+      "id": 10,
+      "name": "classy sauce",
+      "price": 4,
+      "grams": 20
+    },
+    {
+      "id": 11,
+      "name": "garlic sauce",
+      "price": 4,
+      "grams": 20
+    }
+  ],
+  "top sauce": [
+    {
+      "name": "-"
+    },
     {
       "id": 5,
       "name": "ketchup",
@@ -73,6 +127,9 @@
   ],
   "cheese": [
     {
+      "name": "-"
+    },
+    {
       "id": 12,
       "name": "cheddar cheese",
       "price": 12,
@@ -86,6 +143,9 @@
     }
   ],
   "toppings": [
+    {
+      "name": "-"
+    },
     {
       "id": 14,
       "name": "cripsy bacon",
