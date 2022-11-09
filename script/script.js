@@ -40,12 +40,16 @@ const fetch1 = (category) => {
 
 add_meat_btn.addEventListener("click", () => {
   fetch1("meat");
+  indexNr += 1;
+  console.log(indexNr);
 });
 add_bSauce_btn.addEventListener("click", () => {
-  fetch1("bottom sauce");
+  fetch1("bottom_sauce");
+  indexNr += 1;
+  console.log(indexNr);
 });
 add_tSauce_btn.addEventListener("click", () => {
-  fetch1("top sauce");
+  fetch1("top_sauce");
 });
 add_cheese_btn.addEventListener("click", () => {
   fetch1("cheese");
@@ -68,13 +72,13 @@ const createSelect = (data, category) => {
     if (countMeat > 1) {
       deleteSign(divParent);
     }
-  } else if (category === "bottom sauce") {
+  } else if (category === "bottom_sauce") {
     bottomSauce_div.append(divParent);
     countBSouce++;
     if (countBSouce > 1) {
       deleteSign(divParent);
     }
-  } else if (category === "top sauce") {
+  } else if (category === "top_sauce") {
     topSauce_div.append(divParent);
     countTSouce++;
     if (countTSouce > 1) {
@@ -106,35 +110,36 @@ const createSelect = (data, category) => {
     select.append(option);
   });
 
+  const div = document.createElement("div");
+  const img = document.createElement("img");
+
+  div.classList.add("burger_image");
   if (category === "meat") {
-    const div = document.createElement("div");
-    const img = document.createElement("img");
-
-    div.classList.add("burger_image");
-    if (category === "meat") {
-      meat_box.append(div);
-    } else if (category === "bottom sauce") {
-      bottomSauce_box.append(div);
-    }
-
-    div.append(img);
-    img.src = cat[0].url;
-
-    const span = document.createElement("span");
-    span.textContent = cat[0].name;
-    div.append(span);
-    const select1 = document.querySelectorAll(".meat");
-    select1.forEach((element) => {
-      element.addEventListener("change", (e, index) => {
-        span.textContent = e.target.value;
-      });
-    });
-
-    images = document.querySelectorAll(".burger_image");
-    spans = document.querySelectorAll(".burger_image span");
-
-    add_arrow(images, spans);
+    meat_box.append(div);
+  } else if (category === "bottom_sauce") {
+    bottomSauce_box.append(div);
   }
+
+  div.append(img);
+  img.src = cat[1].url;
+
+  const span = document.createElement("span");
+  for (let i = 0; i < cat.length; i++) {
+    span.textContent = cat[0].name;
+    console.log(cat[i]);
+  }
+  div.append(span);
+  const select1 = document.querySelectorAll(`.${category}`);
+  select1.forEach((element) => {
+    element.addEventListener("change", (e) => {
+      span.textContent = e.target.value;
+    });
+  });
+
+  images = document.querySelectorAll(".burger_image");
+  spans = document.querySelectorAll(".burger_image span");
+
+  add_arrow(images, spans);
 };
 
 const add_arrow = (arrArrow, arrSpan) => {
@@ -169,8 +174,8 @@ const deleteSign = (divParent) => {
 
 window.addEventListener("load", () => {
   fetch1("meat");
-  fetch1("bottom sauce");
-  fetch1("top sauce");
+  fetch1("bottom_sauce");
+  fetch1("top_sauce");
   fetch1("cheese");
   fetch1("toppings");
 });

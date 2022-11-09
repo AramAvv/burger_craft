@@ -30,7 +30,7 @@
       "url": "../img/pirjoala-de-pui-grilled.svg"
     }
   ],
-  "bottom sauce": [
+  "bottom_sauce": [
     {
       "name": "-"
     },
@@ -39,90 +39,103 @@
       "name": "ketchup",
       "price": 4,
       "grams": 20,
-      "url": "../img/pirjoala-de-pui-grilled.svg"
+      "url": "../img/ketchup.svg"
     },
     {
       "id": 6,
       "name": "tartar sauce",
       "price": 4,
-      "grams": 30
+      "grams": 30,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 7,
       "name": "mayonnaise",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/maioneza.svg"
     },
     {
       "id": 8,
       "name": "garlic&bbq",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 9,
       "name": "sriracha(spicy)",
       "price": 6,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 10,
       "name": "classy sauce",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
       "id": 11,
       "name": "garlic sauce",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     }
   ],
-  "top sauce": [
+  "top_sauce": [
     {
       "name": "-"
     },
     {
-      "id": 5,
+      "id": 12,
       "name": "ketchup",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/ketchup.svg"
     },
     {
-      "id": 6,
+      "id": 13,
       "name": "tartar sauce",
       "price": 4,
-      "grams": 30
+      "grams": 30,
+      "url": "../img/asset-tartar.svg"
     },
     {
-      "id": 7,
+      "id": 14,
       "name": "mayonnaise",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/maioneza.svg"
     },
     {
-      "id": 8,
+      "id": 15,
       "name": "garlic&bbq",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
-      "id": 9,
+      "id": 16,
       "name": "sriracha(spicy)",
       "price": 6,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
-      "id": 10,
+      "id": 17,
       "name": "classy sauce",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     },
     {
-      "id": 11,
+      "id": 18,
       "name": "garlic sauce",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-tartar.svg"
     }
   ],
   "cheese": [
@@ -130,16 +143,18 @@
       "name": "-"
     },
     {
-      "id": 12,
+      "id": 19,
       "name": "cheddar cheese",
       "price": 12,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/asset-cheddar.svg"
     },
     {
-      "id": 13,
+      "id": 20,
       "name": "dorblu cheese",
       "price": 15,
-      "grams": 25
+      "grams": 25,
+      "url": "../img/asset-dorblu.svg"
     }
   ],
   "toppings": [
@@ -147,52 +162,60 @@
       "name": "-"
     },
     {
-      "id": 14,
+      "id": 21,
       "name": "cripsy bacon",
       "price": 12,
-      "grams": 10
+      "grams": 10,
+      "url": "../img/bacon-crocant.svg"
     },
     {
-      "id": 15,
+      "id": 22,
       "name": "fried egg",
       "price": 10,
-      "grams": 40
+      "grams": 40,
+      "url": "../img/ou-prajit.svg"
     },
     {
-      "id": 16,
+      "id": 23,
       "name": "marinated onion",
       "price": 2,
-      "grams": 10
+      "grams": 10,
+      "url": "../img/ceapa-marinata.svg"
     },
     {
-      "id": 17,
+      "id": 24,
       "name": "caramel onion",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/ceapa-caramelizata.svg"
     },
     {
-      "id": 18,
+      "id": 25,
       "name": "picles",
       "price": 4,
-      "grams": 30
+      "grams": 30,
+      "url": "../img/castraveti-murati.svg"
     },
     {
-      "id": 19,
+      "id": 26,
       "name": "cucumber",
       "price": 4,
-      "grams": 20
+      "grams": 20,
+      "url": "../img/castraveti-proaspeti.svg"
     },
     {
-      "id": 20,
+      "id": 27,
       "name": "tomato",
       "price": 5,
-      "grams": 40
+      "grams": 40,
+      "url": "../img/rosii.svg"
     },
     {
-      "id": 21,
+      "id": 28,
       "name": "iceberg lettuce",
       "price": 5,
-      "grams": 15
+      "grams": 15,
+      "url": "../img/salata-iceberg.svg"
     }
   ]
 }
