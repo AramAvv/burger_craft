@@ -87,7 +87,12 @@ button {
   width: 20px;
   height: 19px;
 
+  transition: .3s ease-in-out;
   background-color: transparent;
+}
+.btn_add_plus:hover{
+
+  transform: rotate(90deg);
 }
 .btn_add_plus:hover{
   animation: animate 0.3s linear;
@@ -143,13 +148,33 @@ button {
   padding: 70px;
 }
 .check {
-  margin-top: 20px;
+  width: 350px;
+  margin-top: 60px;
+  padding-top: 30px;
   border-top: 1px solid yellow;
-  width: 100%;
 }
+.check_text p{
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
 .check_text {
-  padding: 15px;
+  margin: 25px 0;
 }
+.span_name{
+  font-weight: 700;
+  line-height: 1;
+}
+.span_price{
+  color: #f8bb46;
+}
+.total_text{
+  font-size: 30px !important;
+}
+
 
 /*/right side/*/
 /*/Burger image/*/
@@ -220,3 +245,15 @@ img {
   display: flex;
   flex-direction: column;
 }
+
+.animation {
+  animation: hithere 1s ease normal;
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+
