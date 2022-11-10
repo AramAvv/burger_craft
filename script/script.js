@@ -1,4 +1,10 @@
-const order = [];
+const order = [
+    {
+        "name": "brioche bun",
+        "price": 8,
+        "grams": 60
+    }
+];
 let indexNr = 0;
 //Delete Sign count
 let countMeat = 0;
@@ -31,6 +37,7 @@ const toppings_box = document.querySelector(".toppings_box");
 let select_meat_arr = document.querySelectorAll(".burger_item_meat select");
 let select_arr = document.querySelectorAll("select");
 let spans = document.querySelectorAll(".burger_image span");
+const check = document.querySelector('.check_text')
 
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
@@ -40,7 +47,7 @@ const fetch1 = (category,value = 1,new_name,i,index) => {
             if(value === 1){
             createSelect(data, cat);}
             else if(value === 2){
-                changeImage(data,cat,new_name,i);
+                changeImage(data,cat,new_name,i,index);
             }else if(value === 3){
                 createImage(data,cat,new_name,i,index)
             }
@@ -122,15 +129,27 @@ const createSelect = (data, category) => {
         select.append(option);
     });
 
+
     if (category === "meat") {
+        console.log('start:',indexNr)
+        console.log('start:',cat[0].name)
+        console.log('start:',cat[0].price)
+        console.log('start:',cat[0].grams)
+        order.push({
+            index: indexNr,
+            name: cat[0].name,
+            price: cat[0].price,
+            grams: cat[0].grams
+        })
+        check.textContent = ''
+        console.log("Create select:",order);
+        showCheck(order);
         const div = document.createElement("div");
         const img = document.createElement("img");
         div.setAttribute('index',indexNr)
-
         div.classList.add("burger_image");
-        if (category === "meat") {
-            meat_box.append(div);
-        }
+        meat_box.append(div);
+
 
         div.append(img);
         img.src = cat[0].url;
@@ -167,33 +186,53 @@ const add_arrow = (arrArrow, arrSpan) => {
         }
     });
 };
-const changeImage = (data,category,new_name,i) => {
-    console.log(data)
-    console.log(category)
+const changeImage = (data,category,new_name,i,index) => {
+
    data[category].forEach(item =>{
        const item_name = item.name.trim();
        const changed_name = new_name.trim();
        if(item_name === changed_name){
            files_images[i].src = item.url
+           order.forEach(i =>{
+               if(i.index == index){
+                   i.name = item.name
+                   i.price = item.price
+                   i.grams = item.grams
+                   check.textContent = ''
+                   showCheck(order)
+                   console.log("Order change :",order)
+               }
+
+           })
        }
+
    })
+
 }
 
-const createImage = (data,category,new_name,i,index) => {
+const createImage = (data,category,new_name,i,indx) => {
+
     const div = document.createElement('div')
     const img = document.createElement('img')
     const span = document.createElement('span')
     div.classList.add('burger_image')
-    div.setAttribute('index',index)
+    div.setAttribute('index',indx)
     div.append(img)
     div.append(span)
     console.log(new_name)
     data[category].forEach(item =>{
         if(item.name.trim() === new_name.trim().toLowerCase()){
-            console.log(item)
             img.setAttribute('src',item.url)
-            console.log(img.src)
             span.textContent = item.name
+            order.push({
+                index: indx,
+                name: item.name,
+                price: item.price,
+                grams: item.grams
+            })
+            check.textContent = '';
+            showCheck(order)
+            console.log("adaugam imagine:",order)
         }
     })
 
@@ -239,7 +278,6 @@ const deleteSign = (parent) => {
 
         images.forEach(item =>{
             if(item.getAttribute('index') === parent.getAttribute('index')){
-                console.log(item)
                 item.remove()
 
                 images = document.querySelectorAll('.burger_image')
@@ -248,6 +286,17 @@ const deleteSign = (parent) => {
             }
         })
         parent.remove();
+        order.forEach((item,i) =>{
+            console.log(item);
+            console.log(item.index);
+            console.log(i)
+            if(item.index === parent.getAttribute('index'))
+            order.splice(i,1)
+            console.log("After chnage",order)
+            check.textContent = '';
+            showCheck(order)
+
+        })
 
     });
 };
@@ -263,10 +312,10 @@ window.addEventListener('change',(e)=>{
         const index_value = e.target.value.indexOf('(');
         let span_new = e.target.value.slice(0,index_value);
         const select_index = e.target.parentElement.getAttribute('index');
+        let countImageExistance = 0;
         images = document.querySelectorAll('.burger_image');
         spans = document.querySelectorAll('span')
         files_images = document.querySelectorAll('img')
-        let countImageExistance = 0;
 
 
         for (let i = 0; i < images.length; i++) {
@@ -281,11 +330,10 @@ window.addEventListener('change',(e)=>{
                 }
             }
         }
-        console.log(span_new)
         for (let i = 0; i < files_images.length; i++) {
             if(files_images[i].parentElement.getAttribute('index') === select_index && span_new !== ''){
                 span_new = span_new.toLowerCase()
-                fetch1(category,2,span_new,i)
+                fetch1(category,2,span_new,i,files_images[i].parentElement.getAttribute('index'))
             }else if(select_index !== files_images[i].parentElement.getAttribute('index')){
 
                 if(countImageExistance === files_images.length-1){
@@ -295,7 +343,6 @@ window.addEventListener('change',(e)=>{
             }
 
         }
-        console.log(select_index)
 
 
 
@@ -308,3 +355,42 @@ window.addEventListener("load", () => {
     fetch1("cheese");
     fetch1("toppings");
 });
+
+
+const showCheck = (arr) => {
+    const span_total_name = document.createElement('small')
+    const span_total_price = document.createElement('small')
+    const span_total_grams = document.createElement('small')
+    span_total_name.classList.add('span_name')
+    span_total_price.classList.add('span_price')
+    span_total_grams.classList.add('span_grams')
+    let total_lei = 0;
+    let total_grame = 0;
+    arr.forEach(item =>{
+        total_lei += item.price;
+        total_grame += item.grams;
+        const p = document.createElement('p')
+        const span_name = document.createElement('small')
+        const span_price = document.createElement('small')
+        const span_grams = document.createElement('small')
+        p.setAttribute('index',item.index)
+        span_name.classList.add('span_name')
+        span_price.classList.add('span_price')
+        span_grams.classList.add('span_grams')
+
+        span_name.textContent = item.name.toUpperCase() + ' : '
+        span_price.textContent = item.price + 'LEI'
+        span_grams.textContent = '(' + item.grams + 'gr )'
+        p.append(span_name,span_price,span_grams)
+        check.append(p)
+
+    })
+    const total = document.createElement('p')
+    total.classList.add('total_text')
+    span_total_name.textContent = "TOTAL : ";
+    span_total_price.textContent = total_lei + " LEI "
+    span_total_grams.textContent = '(' + total_grame + 'gr )'
+    total.append(span_total_name,span_total_price,span_total_grams)
+    check.append(total)
+
+}
