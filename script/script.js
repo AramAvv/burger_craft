@@ -51,16 +51,16 @@ const resetAnimation = () => {
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
     fetch("./script/package.json")
-        .then((response) => response.json())
-        .then((data) => {
-            if(value === 1){
-            createSelect(data, cat);}
-            else if(value === 2){
-                changeImage(data,cat,new_name,i,index);
-            }else if(value === 3){
-                createImage(data,cat,new_name,i,index)
-            }
-        });
+      .then((response) => response.json())
+      .then((data) => {
+          if(value === 1){
+              createSelect(data, cat);}
+          else if(value === 2){
+              changeImage(data,cat,new_name,i,index);
+          }else if(value === 3){
+              createImage(data,cat,new_name,i,index)
+          }
+      });
 };
 
 add_meat_btn.addEventListener("click", () => {
@@ -127,10 +127,10 @@ const createSelect = (data, category) => {
         if (element.price !== undefined) {
             if(element.name === 'sriracha'){
                 option.textContent = `${element.name.toUpperCase()}(spicy) (${
-                element.price} lei)`;}
+                  element.price} lei)`;}
             else {
                 option.textContent = `${element.name.toUpperCase()} (${
-                    element.price } lei)`;
+                  element.price } lei)`;
             }
         }else {
             option.textContent = "-";
@@ -200,27 +200,27 @@ const add_arrow = (arrArrow, arrSpan) => {
 };
 const changeImage = (data,category,new_name,i,index) => {
 
-   data[category].forEach(item =>{
-       const item_name = item.name.trim();
-       const changed_name = new_name.trim();
-       if(item_name === changed_name){
-           files_images[i].src = item.url
-           images[i].children[0].classList.add('animation')
-           order.forEach(i =>{
-               if(i.index == index){
-                   i.name = item.name
-                   i.price = item.price
-                   i.grams = item.grams
-                   check.textContent = ''
-                   showCheck(order)
-                   console.log("Order change :",order)
-               }
+    data[category].forEach(item =>{
+        const item_name = item.name.trim();
+        const changed_name = new_name.trim();
+        if(item_name === changed_name){
+            files_images[i].src = item.url
+            images[i].children[0].classList.add('animation')
+            order.forEach(i =>{
+                if(i.index == index){
+                    i.name = item.name
+                    i.price = item.price
+                    i.grams = item.grams
+                    check.textContent = ''
+                    showCheck(order)
+                    console.log("Order change :",order)
+                }
 
-           })
-       }
-       resetAnimation()
+            })
+        }
+        resetAnimation()
 
-   })
+    })
 
 }
 
@@ -258,25 +258,25 @@ const createImage = (data,category,new_name,i,indx) => {
             spans = document.querySelectorAll(".burger_image span");
 
             add_arrow(images, spans);
-        break;
+            break;
         case 'top_sauce': top_sauce_box.append(div);
             images = document.querySelectorAll(".burger_image");
             spans = document.querySelectorAll(".burger_image span");
 
             add_arrow(images, spans);
-        break;
+            break;
         case 'cheese': cheese_box.append(div);
             images = document.querySelectorAll(".burger_image");
             spans = document.querySelectorAll(".burger_image span");
 
             add_arrow(images, spans);
-        break;
+            break;
         case 'toppings': toppings_box.append(div);
             images = document.querySelectorAll(".burger_image");
             spans = document.querySelectorAll(".burger_image span");
 
             add_arrow(images, spans);
-        break;
+            break;
     }
 
 
@@ -306,7 +306,7 @@ const deleteSign = (parent) => {
             console.log(item.index);
             console.log(i)
             if(item.index === parent.getAttribute('index'))
-            order.splice(i,1)
+                order.splice(i,1)
             console.log("After chnage",order)
             check.textContent = '';
             showCheck(order)
@@ -359,7 +359,7 @@ window.addEventListener('change',(e)=>{
             }else if(select_index !== files_images[i].parentElement.getAttribute('index')){
 
                 if(countImageExistance === files_images.length-1){
-                   fetch1(category,3,span_new,i,select_index)
+                    fetch1(category,3,span_new,i,select_index)
                 }
                 countImageExistance++;
             }
@@ -419,4 +419,22 @@ const showCheck = (arr) => {
 const restart = document.querySelector('.restart_btn')
 restart.addEventListener('click',()=>{
     window.location.reload()
+})
+
+const submit = document.querySelector('.add_card')
+submit.addEventListener('click',()=>{
+    fetch('http://localhost:3000/order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(order),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+          console.log('Success:', data);
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
 })
