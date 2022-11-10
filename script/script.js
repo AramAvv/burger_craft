@@ -51,16 +51,17 @@ const resetAnimation = () => {
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
     fetch("./script/package.json")
-      .then((response) => response.json())
-      .then((data) => {
-          if(value === 1){
-              createSelect(data, cat);}
-          else if(value === 2){
-              changeImage(data,cat,new_name,i,index);
-          }else if(value === 3){
-              createImage(data,cat,new_name,i,index)
-          }
-      });
+
+        .then((response) => response.json())
+        .then((data) => {
+            if(value === 1){
+                createSelect(data, cat);}
+            else if(value === 2){
+                changeImage(data,cat,new_name,i,index);
+            }else if(value === 3){
+                createImage(data,cat,new_name,i,index)
+            }
+        });
 };
 
 add_meat_btn.addEventListener("click", () => {
@@ -127,7 +128,9 @@ const createSelect = (data, category) => {
         if (element.price !== undefined) {
             if(element.name === 'sriracha'){
                 option.textContent = `${element.name.toUpperCase()}(spicy) (${
-                  element.price} lei)`;}
+
+                    element.price} lei)`;}
+
             else {
                 option.textContent = `${element.name.toUpperCase()} (${
                   element.price } lei)`;
@@ -380,9 +383,9 @@ window.addEventListener("load", () => {
 
 
 const showCheck = (arr) => {
-    const span_total_name = document.createElement('small')
-    const span_total_price = document.createElement('small')
-    const span_total_grams = document.createElement('small')
+    const span_total_name = document.createElement('div')
+    const span_total_price = document.createElement('div')
+    const span_total_grams = document.createElement('div')
     span_total_name.classList.add('span_name')
     span_total_price.classList.add('span_price')
     span_total_grams.classList.add('span_grams')
@@ -392,9 +395,9 @@ const showCheck = (arr) => {
         total_lei += item.price;
         total_grame += item.grams;
         const p = document.createElement('p')
-        const span_name = document.createElement('small')
-        const span_price = document.createElement('small')
-        const span_grams = document.createElement('small')
+        const span_name = document.createElement('div')
+        const span_price = document.createElement('div')
+        const span_grams = document.createElement('div')
         p.setAttribute('index',item.index)
         span_name.classList.add('span_name')
         span_price.classList.add('span_price')
@@ -423,18 +426,22 @@ restart.addEventListener('click',()=>{
 
 const submit = document.querySelector('.add_card')
 submit.addEventListener('click',()=>{
-    fetch('http://localhost:3000/order', {
+
+    fetch('http://localhost:3000/order', {//-> npm install -g json-server, -> npx json-server --watch db.json
+
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(order),
     })
-      .then((response) => response.json())
-      .then((data) => {
-          console.log('Success:', data);
-      })
-      .catch((error) => {
-          console.error('Error:', error);
-      });
+
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
 })

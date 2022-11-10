@@ -154,6 +154,8 @@ button {
   border-top: 1px solid yellow;
 }
 .check_text p{
+  display: flex;
+  flex-direction: row;
   white-space: nowrap;
   overflow: visible;
   text-overflow: clip;
