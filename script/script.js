@@ -371,12 +371,13 @@ window.addEventListener("load", () => {
 });
 
 const showCheck = (arr) => {
-    const span_total_name = document.createElement('div')
-    const span_total_price = document.createElement('div')
-    const span_total_grams = document.createElement('div')
+    const span_total_name = document.createElement('small')
+    const span_total_price = document.createElement('small')
+    const span_total_grams = document.createElement('small')
     span_total_name.classList.add('span_name')
     span_total_price.classList.add('span_price')
     span_total_grams.classList.add('span_grams')
+    let total_lei = 0;
     let total_grame = 0;
     arr.forEach(item =>{
         total_lei += item.price;
