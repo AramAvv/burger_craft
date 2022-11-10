@@ -380,9 +380,9 @@ window.addEventListener("load", () => {
 
 
 const showCheck = (arr) => {
-    const span_total_name = document.createElement('small')
-    const span_total_price = document.createElement('small')
-    const span_total_grams = document.createElement('small')
+    const span_total_name = document.createElement('div')
+    const span_total_price = document.createElement('div')
+    const span_total_grams = document.createElement('div')
     span_total_name.classList.add('span_name')
     span_total_price.classList.add('span_price')
     span_total_grams.classList.add('span_grams')
@@ -392,9 +392,9 @@ const showCheck = (arr) => {
         total_lei += item.price;
         total_grame += item.grams;
         const p = document.createElement('p')
-        const span_name = document.createElement('small')
-        const span_price = document.createElement('small')
-        const span_grams = document.createElement('small')
+        const span_name = document.createElement('div')
+        const span_price = document.createElement('div')
+        const span_grams = document.createElement('div')
         p.setAttribute('index',item.index)
         span_name.classList.add('span_name')
         span_price.classList.add('span_price')
