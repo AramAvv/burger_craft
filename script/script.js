@@ -38,6 +38,7 @@ let select_meat_arr = document.querySelectorAll(".burger_item_meat select");
 let select_arr = document.querySelectorAll("select");
 let spans = document.querySelectorAll(".burger_image span");
 const check = document.querySelector('.check_text')
+const burgerName = document.querySelector('.burger_item_name')
 
 const resetAnimation = () => {
     setTimeout(()=>{
@@ -443,5 +444,7 @@ submit.addEventListener('click',()=>{
         .catch((error) => {
             console.error('Error:', error);
         });
-
+    alert(`Thank you for ordering ${burgerName.value}`);
+    window.location.reload();
+    burgerName.value = '';
 })
