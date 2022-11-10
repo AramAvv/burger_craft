@@ -38,7 +38,10 @@ let select_meat_arr = document.querySelectorAll(".burger_item_meat select");
 let select_arr = document.querySelectorAll("select");
 let spans = document.querySelectorAll(".burger_image span");
 const check = document.querySelector('.check_text')
-const burgerName = document.querySelector('.burger_item_name')
+const restart = document.querySelector('.restart_btn')
+const burger_input = document.querySelector('.burger_item input')
+let total_lei = 0;
+
 
 const resetAnimation = () => {
     setTimeout(()=>{
@@ -52,7 +55,6 @@ const resetAnimation = () => {
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
     fetch("./script/package.json")
-
         .then((response) => response.json())
         .then((data) => {
             if(value === 1){
@@ -129,12 +131,10 @@ const createSelect = (data, category) => {
         if (element.price !== undefined) {
             if(element.name === 'sriracha'){
                 option.textContent = `${element.name.toUpperCase()}(spicy) (${
-
                     element.price} lei)`;}
-
             else {
                 option.textContent = `${element.name.toUpperCase()} (${
-                  element.price } lei)`;
+                    element.price } lei)`;
             }
         }else {
             option.textContent = "-";
@@ -144,10 +144,6 @@ const createSelect = (data, category) => {
 
 
     if (category === "meat") {
-        console.log('start:',indexNr)
-        console.log('start:',cat[0].name)
-        console.log('start:',cat[0].price)
-        console.log('start:',cat[0].grams)
         order.push({
             index: indexNr,
             name: cat[0].name,
@@ -156,7 +152,6 @@ const createSelect = (data, category) => {
         })
 
         check.textContent = ''
-        console.log("Create select:",order);
         showCheck(order);
         const div = document.createElement("div");
         const img = document.createElement("img");
@@ -202,6 +197,7 @@ const add_arrow = (arrArrow, arrSpan) => {
         }
     });
 };
+
 const changeImage = (data,category,new_name,i,index) => {
 
     data[category].forEach(item =>{
@@ -217,7 +213,6 @@ const changeImage = (data,category,new_name,i,index) => {
                     i.grams = item.grams
                     check.textContent = ''
                     showCheck(order)
-                    console.log("Order change :",order)
                 }
 
             })
@@ -238,7 +233,7 @@ const createImage = (data,category,new_name,i,indx) => {
     div.append(img)
     div.append(span)
     img.classList.add('animation')
-    console.log(new_name)
+
     data[category].forEach(item =>{
         if(item.name.trim() === new_name.trim().toLowerCase()){
             img.setAttribute('src',item.url)
@@ -251,7 +246,6 @@ const createImage = (data,category,new_name,i,indx) => {
             })
             check.textContent = '';
             showCheck(order)
-            console.log("adaugam imagine:",order)
         }
     })
 
@@ -283,9 +277,6 @@ const createImage = (data,category,new_name,i,indx) => {
             break;
     }
 
-
-
-
 }
 
 
@@ -306,14 +297,12 @@ const deleteSign = (parent) => {
         })
         parent.remove();
         order.forEach((item,i) =>{
-            console.log(item);
-            console.log(item.index);
-            console.log(i)
-            if(item.index === parent.getAttribute('index'))
+
+            if(item.index === parent.getAttribute('index')){
                 order.splice(i,1)
-            console.log("After chnage",order)
-            check.textContent = '';
-            showCheck(order)
+                check.textContent = '';
+                showCheck(order)
+            }
 
         })
 
@@ -370,10 +359,9 @@ window.addEventListener('change',(e)=>{
 
         }
 
-
-
     }
 })
+
 window.addEventListener("load", () => {
     fetch1("meat");
     fetch1("bottom_sauce");
@@ -382,7 +370,6 @@ window.addEventListener("load", () => {
     fetch1("toppings");
 });
 
-
 const showCheck = (arr) => {
     const span_total_name = document.createElement('div')
     const span_total_price = document.createElement('div')
@@ -390,7 +377,6 @@ const showCheck = (arr) => {
     span_total_name.classList.add('span_name')
     span_total_price.classList.add('span_price')
     span_total_grams.classList.add('span_grams')
-    let total_lei = 0;
     let total_grame = 0;
     arr.forEach(item =>{
         total_lei += item.price;
@@ -420,31 +406,37 @@ const showCheck = (arr) => {
     check.append(total)
 
 }
-const restart = document.querySelector('.restart_btn')
+
 restart.addEventListener('click',()=>{
     window.location.reload()
 })
 
+let individual_burger_name = ''
+burger_input.addEventListener('input',(e)=>{
+    individual_burger_name = e.target.value
+})
 const submit = document.querySelector('.add_card')
 submit.addEventListener('click',()=>{
 
-    fetch('http://localhost:3000/order', {//-> npm install -g json-server, -> npx json-server --watch db.json
+    const submit = [individual_burger_name,total_lei,...order];
 
+    fetch('http://localhost:3000/order', {//json-server --watch script/package.json
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(order),
+        body: JSON.stringify(submit),
     })
-
         .then((response) => response.json())
         .then((data) => {
+            alert("Comanda dvs a fost plasata cu succes!")
             console.log('Success:', data);
+            window.location.reload()
+
         })
         .catch((error) => {
+            alert("Eroare de retea, va rog mai incercati o data!")
             console.error('Error:', error);
+            window.location.reload()
         });
-    alert(`Thank you for ordering ${burgerName.value}`);
-    window.location.reload();
-    burgerName.value = '';
 })
