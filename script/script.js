@@ -39,6 +39,15 @@ let select_arr = document.querySelectorAll("select");
 let spans = document.querySelectorAll(".burger_image span");
 const check = document.querySelector('.check_text')
 
+const resetAnimation = () => {
+    setTimeout(()=>{
+        const animation = document.querySelectorAll('.animation')
+        animation.forEach((item) =>{
+            item.classList.remove('animation')
+        })
+    },800)
+}
+
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
     fetch("./script/package.json")
@@ -141,11 +150,13 @@ const createSelect = (data, category) => {
             price: cat[0].price,
             grams: cat[0].grams
         })
+
         check.textContent = ''
         console.log("Create select:",order);
         showCheck(order);
         const div = document.createElement("div");
         const img = document.createElement("img");
+        img.classList.add('animation')
         div.setAttribute('index',indexNr)
         div.classList.add("burger_image");
         meat_box.append(div);
@@ -161,6 +172,7 @@ const createSelect = (data, category) => {
         images = document.querySelectorAll(".burger_image");
         spans = document.querySelectorAll(".burger_image span");
 
+        resetAnimation();
         add_arrow(images, spans);
     }
 };
@@ -193,6 +205,7 @@ const changeImage = (data,category,new_name,i,index) => {
        const changed_name = new_name.trim();
        if(item_name === changed_name){
            files_images[i].src = item.url
+           images[i].children[0].classList.add('animation')
            order.forEach(i =>{
                if(i.index == index){
                    i.name = item.name
@@ -205,6 +218,7 @@ const changeImage = (data,category,new_name,i,index) => {
 
            })
        }
+       resetAnimation()
 
    })
 
@@ -219,6 +233,7 @@ const createImage = (data,category,new_name,i,indx) => {
     div.setAttribute('index',indx)
     div.append(img)
     div.append(span)
+    img.classList.add('animation')
     console.log(new_name)
     data[category].forEach(item =>{
         if(item.name.trim() === new_name.trim().toLowerCase()){
@@ -330,6 +345,13 @@ window.addEventListener('change',(e)=>{
                 }
             }
         }
+        order.forEach((item,i) =>{
+            if(item.index === select_index && span_new === ''){
+                order.splice(i,1);
+                check.textContent = '';
+                showCheck(order)
+            }
+        })
         for (let i = 0; i < files_images.length; i++) {
             if(files_images[i].parentElement.getAttribute('index') === select_index && span_new !== ''){
                 span_new = span_new.toLowerCase()
@@ -394,3 +416,7 @@ const showCheck = (arr) => {
     check.append(total)
 
 }
+const restart = document.querySelector('.restart_btn')
+restart.addEventListener('click',()=>{
+    window.location.reload()
+})
