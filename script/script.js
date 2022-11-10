@@ -51,6 +51,7 @@ const resetAnimation = () => {
 const fetch1 = (category,value = 1,new_name,i,index) => {
     const cat = category;
     fetch("./script/package.json")
+
         .then((response) => response.json())
         .then((data) => {
             if(value === 1){
@@ -127,10 +128,12 @@ const createSelect = (data, category) => {
         if (element.price !== undefined) {
             if(element.name === 'sriracha'){
                 option.textContent = `${element.name.toUpperCase()}(spicy) (${
+
                     element.price} lei)`;}
+
             else {
                 option.textContent = `${element.name.toUpperCase()} (${
-                    element.price } lei)`;
+                  element.price } lei)`;
             }
         }else {
             option.textContent = "-";
@@ -423,13 +426,16 @@ restart.addEventListener('click',()=>{
 
 const submit = document.querySelector('.add_card')
 submit.addEventListener('click',()=>{
+
     fetch('http://localhost:3000/order', {//-> npm install -g json-server, -> npx json-server --watch db.json
+
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(order),
     })
+
         .then((response) => response.json())
         .then((data) => {
             console.log('Success:', data);
@@ -437,4 +443,5 @@ submit.addEventListener('click',()=>{
         .catch((error) => {
             console.error('Error:', error);
         });
+
 })
