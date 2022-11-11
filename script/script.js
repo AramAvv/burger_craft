@@ -1,5 +1,6 @@
 const order = [
     {
+        "id": 0,
         "name": "brioche bun",
         "price": 8,
         "grams": 60
@@ -285,7 +286,6 @@ const deleteSign = (parent) => {
     deleteSelect.setAttribute("class", "deleteSelect");
     parent.append(deleteSelect);
     deleteSelect.addEventListener("click", () => {
-
         images.forEach(item =>{
             if(item.getAttribute('index') === parent.getAttribute('index')){
                 item.remove()
@@ -297,11 +297,14 @@ const deleteSign = (parent) => {
         })
         parent.remove();
         order.forEach((item,i) =>{
-
-            if(item.index === parent.getAttribute('index')){
-                order.splice(i,1)
+            console.log("Elemente order:",item)
+            console.log(item.index)
+            console.log(parent.getAttribute('index'))
+            if(item.index == parent.getAttribute('index')){
+                console.log(order.splice(i, 1));
                 check.textContent = '';
                 showCheck(order)
+                console.log("Changed",order)
             }
 
         })
@@ -371,9 +374,9 @@ window.addEventListener("load", () => {
 });
 
 const showCheck = (arr) => {
-    const span_total_name = document.createElement('small')
-    const span_total_price = document.createElement('small')
-    const span_total_grams = document.createElement('small')
+    const span_total_name = document.createElement('div')
+    const span_total_price = document.createElement('div')
+    const span_total_grams = document.createElement('div')
     span_total_name.classList.add('span_name')
     span_total_price.classList.add('span_price')
     span_total_grams.classList.add('span_grams')
@@ -418,26 +421,39 @@ burger_input.addEventListener('input',(e)=>{
 })
 const submit = document.querySelector('.add_card')
 submit.addEventListener('click',()=>{
+    const order_check = {};
+    const products = [];
+    let total_price = 0;
+    order.forEach(item =>{
 
-    const submit = [individual_burger_name,total_lei,...order];
+        products.push({
+            name: item.name,
+            price: item.price,
+            grams: item.grams
+        })
+        total_price += item.price
+    })
+    order_check.products = products;
+    order_check.total = `${total_price} lei`;
+    order_check.burgerName = individual_burger_name;
 
-    fetch('http://localhost:3000/order', {//json-server --watch script/package.json
+
+    fetch('http://localhost:3000/order', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(submit),
+        body: JSON.stringify(order_check),
     })
         .then((response) => response.json())
         .then((data) => {
-            alert("Comanda dvs a fost plasata cu succes!")
             console.log('Success:', data);
+            alert("Comanda acceptata!")
             window.location.reload()
 
         })
         .catch((error) => {
-            alert("Eroare de retea, va rog mai incercati o data!")
+            alert("Problema de retea!!")
             console.error('Error:', error);
-            window.location.reload()
         });
 })
